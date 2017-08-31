@@ -44,3 +44,22 @@ twitterwidget {
 	background-color: #fff;
 	border: 1px solid #424242;
 }
+
+.wtf-tweet-holder {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(45,45,45,.3);
+    height: 100%;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+
+.twitter-tweet-rendered {
+	z-index: -200;
+}
+

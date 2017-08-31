@@ -11,19 +11,20 @@ function understrap_remove_scripts() {
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-function theme_enqueue_styles() {
 
+function theme_enqueue_styles() {
 	// Get the theme data
 	$the_theme = wp_get_theme();
 
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'custom-wtf-scripts' , get_stylesheet_directory_uri() . '/js/custom-wtf.js', array(), '1', true);
+    wp_localize_script('custom-wtf-scripts', 'WPURLS', array( 'siteurl' => get_option('siteurl') )); //gets you the home url as a js variable
+
 }
 
 
-//create title for tweet claiming
-
+//create title for tweet that does 'claime by' & current user
 function claimTitle(){
 	$current_user = wp_get_current_user();
 	$name = $current_user->user_login;
@@ -110,3 +111,9 @@ function schoollawwtf_add_custom_types( $query ) {
 }
 add_filter( 'pre_get_posts', 'schoollawwtf_add_custom_types' );
 
+//overlay builder for displaying twitter posts but linking them to wp posts
+
+function tweetLink($id){
+	$tweetHTML = wp_oembed_get(get_post_meta($id, 'tweet', true));
+	return $tweetHTML;
+}

@@ -45,7 +45,16 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
+
+						if (get_post_meta(get_the_ID(), 'tweet', true)) {
+
+							echo '<div class="wtf-tweet-holder" data-link="' . get_the_ID() . '">';
+					        echo wp_oembed_get(get_post_meta(get_the_ID(), 'tweet', true));
+					        echo '</div>';
+					      } //gets Tweet url from custom field tweet and displays
+					      else {
+								get_template_part( 'loop-templates/content', get_post_format() );
+							}
 						?>
 
 					<?php endwhile; ?>
