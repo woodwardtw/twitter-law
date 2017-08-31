@@ -1,0 +1,46 @@
+#main {
+	width: 100%;
+}
+
+.the-tweet {
+	width: 100%;
+	background-color: #424242;
+	padding: 30px;
+}
+
+twitterwidget {
+	margin: 20px auto;	
+}
+
+.analysis-text {
+	margin-top: 20px; 
+	display: block;
+}
+
+.tweet-title {
+	margin-top: 20px;
+	font-size: 2em;
+	font-weight: 100;
+}
+
+.the-analysis {
+	margin-bottom: 80px;
+}
+
+.comments-title {
+	display: none;
+}
+
+.wtf-cat-class {
+	background-color: #424242;
+	border: 1px solid #424242;
+	color: #fff;
+	margin: 5px 10px 20px 0;
+	padding: 8px;
+	display: inline-block;
+}
+
+.wtf-cat-class:hover {
+	background-color: #fff;
+	border: 1px solid #424242;
+}
