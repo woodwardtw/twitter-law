@@ -70,7 +70,7 @@ function create_tweet_cpt() {
 		'labels' => $labels,
 		'menu_icon' => '',
 		'supports' => array('title', 'editor', 'thumbnail', 'comments', 'revisions', 'author', 'trackbacks', 'page-attributes', 'custom-fields', ),
-        'taxonomies' => array('category'),
+        'taxonomies' => array('category','post_tag'),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,

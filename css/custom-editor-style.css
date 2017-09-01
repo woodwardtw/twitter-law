@@ -9282,10 +9282,18 @@ twitterwidget {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(45, 45, 45, 0.3);
   height: 100%;
   margin-bottom: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 200;
+  -webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+  transition: all .5s ease-in; }
+
+.wtf-tweet-holder:hover {
+  background-color: rgba(70, 160, 223, 0.2);
+  border: 1px solid #46a0df; }
 
 .twitter-tweet-rendered {
   z-index: -200; }

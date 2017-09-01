@@ -53,10 +53,19 @@ twitterwidget {
   display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(45,45,45,.3);
     height: 100%;
 	margin-bottom: 30px;
 	cursor: pointer;
+	z-index: 200;
+	-webkit-transition: all .5s ease-in;
+  -moz-transition: all .5s ease-in;
+  -o-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.wtf-tweet-holder:hover {
+	background-color: rgba(70,160,223,.2);
+	border: 1px solid rgba(70,160,223,1);
 }
 
 .twitter-tweet-rendered {

@@ -35,7 +35,8 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && ! emp
             'post_title'     => esc_sql($_POST['post_title'])
         );
         wp_update_post($post);
-
+        wp_set_post_tags($post_id, 'claimed', true);//tag them as claimed to make showing claimed vs unclaimed easier
+        //category updates
         $clean_cats = esc_sql($_POST['cat_list']);       
         $cats = array_map('intval', explode(',', $clean_cats));// get it as integers the way we need it
 
