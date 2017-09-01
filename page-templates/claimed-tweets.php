@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Unclaimed Tweets
+ * Template Name: Claimed Tweets
  *
  * Template for displaying Tweets that haven't been claimed
  *
@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						$claimedID = $claimed->term_id;
 						$args = array( 
 							'post_type' => 'tweet',
-							'tag__not_in' => array( $claimedID ), //excludes tweets with tag 'claimed'
+							'tag' => array( $claimedID ), //INCLUDES tweets with tag 'claimed'
 							'orderby' => 'rand',
 							'posts_per_page' => 10, 
 							);

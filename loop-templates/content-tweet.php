@@ -68,11 +68,10 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && ! emp
   
   <div class="row justify-content-center">
     <div class="col-md-10 analysis-text">
-      <?php 
-        $title = get_the_title();
-        $claimed = 'claimed by'; //checks to see if the post has been claimed and shows content if true
-        $open = strpos($title, $claimed); 
-        if($open === 0) { 
+      <?php       
+   
+        $open = has_tag('claimed'); //checks to see if the post has the 'claimed' tag
+        if($open === false) { 
           echo '<h3 class="tweet-title">The Analysis</h3>';
           the_category(' ');
           echo '<div class="the-analysis">';

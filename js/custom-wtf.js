@@ -11,17 +11,15 @@ function categoriesChecked () {
 		}
 }
 
+
+
+
 function twitterLinks (){
-	 var url = WPURLS.siteurl;
-	if (document.getElementsByClassName('wtf-tweet-holder')){
-		var currentTweets = document.getElementsByClassName('wtf-tweet-holder');
-	}
-	for (var i = currentTweets.length - 1; i >= 0; i--) {	
-		 var postID = currentTweets[i].dataset.link;
-		jQuery(currentTweets[i]).click(function () {
-	    	window.location = url + '?tweet=' + postID;
+	var url = WPURLS.siteurl + '/?p=';
+	jQuery(".wtf-tweet-holder").click(function() {
+		window.location = url + jQuery(this).data('link');
+		console.log('click = ' + jQuery(this).data('link'));
 		});
 	}
-}
 
 twitterLinks();
