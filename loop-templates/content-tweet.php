@@ -71,7 +71,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && ! emp
       <?php       
    
         $open = has_tag('claimed'); //checks to see if the post has the 'claimed' tag
-        if($open === false) { 
+        if($open === true) { 
           echo '<h3 class="tweet-title">The Analysis</h3>';
           the_category(' ');
           echo '<div class="the-analysis">';
@@ -87,9 +87,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && ! emp
 
 <!--restrict form option to unclaimed posts-->
   <?php 
-    $title = get_the_title();
-    $claimed = 'claimed by'; //checks to see if the title has been updated as claimed and hides if that is true
-    $open = strpos($title, $claimed); 
+    $open = has_tag('claimed');
     if($open === false) {  ?> 
 
 <h3 class="tweet-title">Analyze the Tweet</h3>
