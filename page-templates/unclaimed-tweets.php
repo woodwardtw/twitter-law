@@ -38,7 +38,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						if ( $the_query->have_posts() ) :
 						while ( $the_query->have_posts() ) : $the_query->the_post();
 						  
-
 							if (get_post_meta(get_the_ID(), 'tweet', true)) {
 
 								echo '<div class="wtf-tweet-holder" data-link="' . get_the_ID() . '">';
